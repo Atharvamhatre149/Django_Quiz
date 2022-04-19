@@ -1,0 +1,60 @@
+body {
+    height: 100vh;
+
+}
+
+.Quiz-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.cards {
+
+
+    height: 75%;
+    width: 75%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-image: url("Quiztime.jpeg");
+    justify-content: space-around;
+    background-color: #f1f1f1;
+    align-items: center;
+}
+
+.cards div {
+    height: 40%;
+    width: 40%;
+    display: flex;
+
+}
+
+#div1 {
+
+    background-color: #17A2B8;
+
+    flex-basis: auto;
+
+
+}
+
+.div1-img {
+    width: 100%;
+    height: 100%;
+}
+
+#div2 {
+
+    flex-basis: auto;
+}
+
+#div3 {
+    flex-basis: auto;
+}
+
+#div4 {
+    flex-basis: auto;
+}

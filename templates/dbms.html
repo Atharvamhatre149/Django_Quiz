@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DBMS Quiz</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="bs-example">
+    <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background-color: #000000;">
+    <a style="color: #ffffff;text-decoration: none; " href="/"><font face = "Comic sans MS" size =" 5">Online Quiz</font><br /></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav">
+          <a style="
+          padding-left: 30px;
+      " href="/Quizselect" class="nav-item nav-link active">Quizselect</a>
+            {% if request.user.is_authenticated %}
+              <a  class="nav-item nav-link active" href="/showScore"> {{ current_u }} </a>
+                <a style="color:white"href="/signout" class="nav-item nav-link">Logout</a>
+            {% endif %}
+        </div>
+
+      </div>
+    </nav>
+  </div>
+
+    <div class="container">
+        <section class="questions">
+            <h3>Q1.What is DBMS?</h3><br>
+            <input type="radio" name="que1" class="item" id="q11"><label for="q11">Collection of queries</label><br>
+            <input type="radio" name="que1" class="item" id="q12"><label for="q12">High-level language</label><br>
+            <input type="radio" name="que1" class="item" id="q13"><label for="q13">Programming language</label><br>
+            <input type="radio" name="que1" class="right item" id="q14"><label for="q14">stores, modifies data</label><br>
+        </section>
+
+    <section class="questions">
+        <h3>Q2. Which of the following is a function of the DBMS?</h3><br>
+        <input type="radio" name="que2" class="item" id="q21"><label for="q21"> Storing data</label><br>
+        <input type="radio" name="que2" class="item" id="q22"><label for="q22"> Provides multi-users access</label><br>
+        <input type="radio" name="que2" class="item" id="q23"><label for="q23">Data Integrity</label><br>
+        <input type="radio" name="que2" class="right item" id="q24"><label for="q24">All of the above</label><br>
+    </section>
+    
+    <section class="questions">
+        <h3>Q3.What is information about data called?</h3><br>
+        <input type="radio" name="que3" class="item" id="q31"><label for="q31"> Hyper data</label><br>
+        <input type="radio" name="que3" class="item" id="q32"><label for="q32"> Tera data</label><br>
+        <input type="radio" name="que3" class="right item" id="q33"><label for="q33"> Meta data</label><br>
+        <input type="radio" name="que3" class="item" id="q34"><label for="q34"> Relations</label><br>
+    </section>
+    
+    <section class="questions">
+        <h3>Q4. The ability to query data, as well as insert, delete, and alter tuples, is offered by ____________</h3><br>
+        <input type="radio" name="que4" class="item" id="q41"><label for="q41">TCL</label><br>
+        <input type="radio" name="que4" class="item" id="q42"><label for="q42">DCL</label><br>
+        <input type="radio" name="que4" class="item" id="q43"><label for="q43">DDL</label><br>
+        <input type="radio" name="que4" class="right item" id="q44"><label for="q44"> DML</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q5.Which forms have a relation that contains information about a single entity?</h3><br>
+        <input type="radio" name="que5" class="right item" id="q51"><label for="q51">4NF</label><br>
+        <input type="radio" name="que5" class="item" id="q52"><label for="q52">2NF</label><br>
+        <input type="radio" name="que5" class="item" id="q53"><label for="q53">5NF</label><br>
+        <input type="radio" name="que5" class="item" id="q54"><label for="q54">3NF</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q6.What is rows of a relation known as?</h3><br>
+        <input type="radio" name="que6" class="item" id="q61"><label for="q61">Degree</label><br>
+        <input type="radio" name="que6" class="item" id="q62"><label for="q62">Entity</label><br>
+        <input type="radio" name="que6" class="right item" id="q63"><label for="q63">Tuple</label><br>
+        <input type="radio" name="que6" class="item" id="q64"><label for="q64">None</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q7.Which of the following is a command of  DDL?</h3><br>
+        <input type="radio" name="que7" class="item" id="q71"><label for="q71">Alter</label><br>
+        <input type="radio" name="que7" class="right item" id="q72"><label for="q72">Delete</label><br>
+        <input type="radio" name="que7" class="item" id="q73"><label for="q73">Create</label><br>
+        <input type="radio" name="que7" class="item" id="q74"><label for="q74">All of the above</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q8.Which of the following SQL command is used for removing (or deleting) a relation form the database?</h3><br>
+        <input type="radio" name="que8" class="right item" id="q81"><label for="q81">Drop</label><br>
+        <input type="radio" name="que8" class="item" id="q82"><label for="q82">Delete</label><br>
+        <input type="radio" name="que8" class="item" id="q83"><label for="q83">Rollback</label><br>
+        <input type="radio" name="que8" class="item" id="q84"><label for="q84">Remove</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q9.Rectangles in ER diagram represents?</h3><br>
+        <input type="radio" name="que9" class="item" id="q91"><label for="q91">Tables</label><br>
+        <input type="radio" name="que9" class="item" id="q92"><label for="q92">Attributes</label><br>
+        <input type="radio" name="que9" class="item" id="q93"><label for="q93">Tuples</label><br>
+        <input type="radio" name="que9" class="right item" id="q94"><label for="q94">Entity sets</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q10.Which of the following allows to uniquely identify a tuple?</h3><br>
+        <input type="radio" name="que10" class="item" id="q101"><label for="q101">Schema</label><br>
+        <input type="radio" name="que10" class="item" id="q102"><label for="q102">Attribute</label><br>
+        <input type="radio" name="que10" class="right item" id="q103"><label for="q103">Super key</label><br>
+        <input type="radio" name="que10" class="item" id="q104"><label for="q104">Domain</label><br>
+    </section>
+
+    <form id="aoaform" method="post" action="/score" name="dbmsform" >
+      {% csrf_token  %}
+    <input id="scoreinput" type="hidden" name="score" value=""/>
+    <input id="subjectname" type="hidden" name="subjectname" value=""/>
+    <button  id="submit" onclick="result()">Submit</button>
+</form>
+
+    <script>
+          var score = 0;
+        function result()
+        {
+
+            if (document.getElementById('q14').checked)
+                score++;
+            if (document.getElementById('q24').checked)
+                score++;
+            if (document.getElementById('q33').checked)
+                score++;
+            if (document.getElementById('q44').checked)
+                score++;
+            if (document.getElementById('q51').checked)
+                score++;
+            if (document.getElementById('q63').checked)
+                score++;
+            if (document.getElementById('q72').checked)
+                score++;
+            if (document.getElementById('q81').checked)
+                score++;
+            if (document.getElementById('q94').checked)
+                score++;
+            if (document.getElementById('q103').checked)
+                score++;
+            alert("Score :- "+score);
+            submitForm()
+        }
+        function submitForm() {
+            document.getElementById("scoreinput").value = score
+            document.getElementById("subjectname").value = "DBMS"
+            document.getElementById("dbmsform").submit()
+        }
+    </script>
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OS Quiz</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="bs-example">
+    <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background-color: #000000;">
+    <a style="color: #ffffff;text-decoration: none; " href="/"><font face = "Comic sans MS" size =" 5">Online Quiz</font><br /></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+
+            <div class="navbar-nav">
+          <a style="
+          padding-left: 30px;
+      " href="/Quizselect" class="nav-item nav-link active">Quizselect</a>
+            {% if request.user.is_authenticated %}
+              <a  class="nav-item nav-link active" href="/showScore"> {{ current_u }} </a>
+                 <a style="color:white"href="/signout" class="nav-item nav-link">Logout</a>
+            {% endif %}
+
+
+        </div>
+
+
+
+      </div>
+    </nav>
+  </div>
+
+    <div class="container">
+        <section class="questions">
+            <h3>Q1.Suppose we have a O(n) time algorithm that finds median of an unsorted array. Now consider a QuickSort implementation where we first find median using the above algorithm, then use median as pivot. What will be the worst case time complexity of this modified QuickSort.</h3><br>
+            <input type="radio" name="que1" class="item" id="q11"><label for="q11">O(n^2logn)</label><br>
+            <input type="radio" name="que1" class="item" id="q12"><label for="q12">O(n^2)</label><br>
+            <input type="radio" name="que1" class="item" id="q13"><label for="q13">O(nlogn logn)</label><br>
+            <input type="radio" name="que1" class="right item" id="q14"><label for="q14">O(nlogn)</label><br>
+        </section>
+
+    <section class="questions">
+        <h3>Q2.The recurrence relation capturing the optimal time of the Tower of Hanoi problem with n discs is..</h3><br>
+        <input type="radio" name="que2" class="item" id="q21"><label for="q21">T(n) = 2T(n – 2) + 2</label><br>
+        <input type="radio" name="que2" class="item" id="q22"><label for="q22">T(n) = 2T(n – 1) + n</label><br>
+        <input type="radio" name="que2" class="item" id="q23"><label for="q23">T(n) = 2T(n/2) + 1</label><br>
+        <input type="radio" name="que2" class="right item" id="q24"><label for="q24">T(n) = 2T(n – 1) + 1</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q3.Which of the given options provides the increasing order of asymptotic complexity of functions f1, f2, f3 and f4?<br>
+            f1(n) = 2^n, f2(n) = n^(3/2), f3(n) = nLogn, f4(n) = n^(Logn)</h3><br>
+        <input type="radio" name="que3" class="item" id="q31"><label for="q31">f2, f3, f1, f4</label><br>
+        <input type="radio" name="que3" class="item" id="q32"><label for="q32">f2, f3, f4, f1</label><br>
+        <input type="radio" name="que3" class="right item" id="q33"><label for="q33">f3, f2, f4, f1</label><br>
+        <input type="radio" name="que3" class="item" id="q34"><label for="q34">f3, f2, f1, f4</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q4. Which Data Structure is used to perform Recursion?</h3><br>
+        <input type="radio" name="que4" class="item" id="q41"><label for="q41">Array</label><br>
+        <input type="radio" name="que4" class="item" id="q42"><label for="q42">Queue</label><br>
+        <input type="radio" name="que4" class=" right item" id="q43"><label for="q43">Stack</label><br>
+        <input type="radio" name="que4" class="item" id="q44"><label for="q44">Linked List</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q5.Which of the following algorithm can be used to solve the Hamiltonian path problem efficiently?</h3><br>
+        <input type="radio" name="que5" class="right item" id="q51"><label for="q51">branch and bound</label><br>
+        <input type="radio" name="que5" class="item" id="q52"><label for="q52">iterative improvement</label><br>
+        <input type="radio" name="que5" class="item" id="q53"><label for="q53">divide and conquer</label><br>
+        <input type="radio" name="que5" class="item" id="q54"><label for="q54">greedy algorithm</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q6.What is the worst case time complexity of merge sort?</h3><br>
+        <input type="radio" name="que6" class="item" id="q61"><label for="q61">O(N Log N)</label><br>
+        <input type="radio" name="que6" class="item" id="q62"><label for="q62">O(N*N)</label><br>
+        <input type="radio" name="que6" class="right item" id="q63"><label for="q63">O(Log N)</label><br>
+        <input type="radio" name="que6" class="item" id="q64"><label for="q64">O(Log LogN)</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q7.What is best case complexity of selection sort</h3><br>
+        <input type="radio" name="que7" class="item" id="q71"><label for="q71">n</label><br>
+        <input type="radio" name="que7" class="right item" id="q72"><label for="q72">n^2</label><br>
+        <input type="radio" name="que7" class="item" id="q73"><label for="q73">n logn</label><br>
+        <input type="radio" name="que7" class="item" id="q74"><label for="q74">logn</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q8.Which of the following algorithms has worst time complexity?</h3><br>
+        <input type="radio" name="que8" class="right item" id="q81"><label for="q81">Insertion Sort</label><br>
+        <input type="radio" name="que8" class="item" id="q82"><label for="q82">Binary Seach</label><br>
+        <input type="radio" name="que8" class="item" id="q83"><label for="q83">Linear Search</label><br>
+        <input type="radio" name="que8" class="item" id="q84"><label for="q84">Merge Sort</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q9.Given items as {value,weight} pairs {60,20},{50,25},{20,5}. The capacity of knapsack=40. Find the maximum value output assuming items to be divisible and nondivisible respectively.</h3><br>
+        <input type="radio" name="que9" class="item" id="q91"><label for="q91">10080</label><br>
+        <input type="radio" name="que9" class="item" id="q92"><label for="q92">10070</label><br>
+        <input type="radio" name="que9" class="item" id="q93"><label for="q93">130110</label><br>
+        <input type="radio" name="que9" class="right item" id="q94"><label for="q94">11080</label><br>
+    </section>
+
+    <section class="questions">
+        <h3>Q10.In greedy method which type of solution is generated</h3><br>
+        <input type="radio" name="que10" class="right item" id="q101"><label for="q101">Optimal solution</label><br>
+        <input type="radio" name="que10" class="item" id="q102"><label for="q102">Best solution</label><br>
+        <input type="radio" name="que10" class="item" id="q103"><label for="q103">Worst solution</label><br>
+        <input type="radio" name="que10" class="item" id="q104"><label for="q104">All Solutions</label><br>
+    </section>
+
+
+<form id="aoaform" method="post" action="/score" name="aoaform" >
+      {% csrf_token  %}
+    <input id="scoreinput" type="hidden" name="score" value=""/>
+    <input id="subjectname" type="hidden" name="subjectname" value=""/>
+    <button  id="submit" onclick="result()">Submit</button>
+</form>
+    <script>
+         var score = 0;
+        function result()
+        {
+
+            if (document.getElementById('q14').checked)
+                score++;
+            if (document.getElementById('q24').checked)
+                score++;
+            if (document.getElementById('q33').checked)
+                score++;
+            if (document.getElementById('q43').checked)
+                score++;
+            if (document.getElementById('q51').checked)
+                score++;
+            if (document.getElementById('q63').checked)
+                score++;
+            if (document.getElementById('q72').checked)
+                score++;
+            if (document.getElementById('q81').checked)
+                score++;
+            if (document.getElementById('q94').checked)
+                score++;
+            if (document.getElementById('q101').checked)
+                score++;
+            alert("Score :- "+score);
+            submitForm()
+        }
+        function submitForm() {
+            document.getElementById("scoreinput").value = score
+            document.getElementById("subjectname").value = "OPERATING SYSTEM"
+            document.getElementById("aoaform").submit()
+        }
+    </script>
+
+    </div>
+
+</body>
+</html>

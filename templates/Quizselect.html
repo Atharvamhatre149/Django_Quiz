@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+<link href="static/Quizselect.css" rel="stylesheet">
+<meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="navbar.html">
+    <title>Quizselect</title>
+</head>
+<body>
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md  navbar-dark " style="background-color: #17A2B8;">
+    <a style="color: #ffffff;text-decoration: none; " href="/"><font face = "Comic sans MS" size =" 5">Online Quiz</font><br /></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+        <div class="navbar-nav">
+
+            {% if request.user.is_authenticated %}
+              <a  style="padding-left: 25px" class="nav-item nav-link active" href="/showScore"> {{ current_u }} </a>
+                <a style="color:white"href="/signout" class="nav-item nav-link">Logout</a>
+                {% else %}
+                    <a  style="padding-left: 25px" class="nav-item nav-link active" href="/"> Home </a>
+                  <a style="color:white"href="/signin" class="nav-item nav-link">Login</a>
+            {% endif %}
+
+        </div>
+    </nav>
+  </div>
+
+  <br>
+  <section class="Quiz-cards">
+      <div class="cards" >
+
+          <div id="div1"><a href="/python"><img class="div1-img" src="static/python.jpeg">Python</a></div>
+          <div id="div2"><a href="/os"><img class="div1-img"src="static/os.jpeg">OS</a></div>
+          <div id="div3"><a href="/dbms"><img class="div1-img"src="static/dbms.jpeg">DBMS</a></div>
+          <div id="div4"><a href="/aoa"><img class="div1-img"src="static/aoa.jpeg">AOA</a></div>
+
+      </div>
+
+  </section>
+</body>
+
+</html>

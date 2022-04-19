@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="static/signup.css">
+    <title>Home</title>
+
+</head>
+<body>
+<div class="bs-example">
+    <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background-color: #17A2B8;">
+    <a style="color: #ffffff;text-decoration: none; " href="/"><font face = "Comic sans MS" size =" 5">Online Quiz</font><br /></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+        <div class="navbar-nav">
+          <a style="
+          padding-left: 30px;
+      " href="/" class="nav-item nav-link active">Home</a>
+
+          <a style="color:white"href="/signin" class="nav-item nav-link">Login</a>
+        </div>
+
+
+    </nav>
+  </div>
+
+
+<div class="main">
+    <div class="left">
+        <div class="header" style="color:White"><b>Join Our Live Quiz Community</b></div>
+
+        <form class="signup-form" action="/signup" method="post">
+                {% csrf_token  %}
+            <div class="username-div">
+                <!--                    <label form="Email">Email</label>-->
+                <i class="fa fa-user"></i>
+                <input class="name" type="text" placeholder="Username" name="name" required>
+            </div>
+            <div class="email-div">
+                <i class="fa fa-user"></i>
+                <input class="email" type="email" placeholder="email" name="email" required>
+            </div>
+            <div class="password-div" id="password">
+                <!--                     <label form="Password">Password</label>-->
+                <i class="fa fa-lock"></i>
+                <input class="password" placeholder="Enter Password" type="password" name="password" required>
+            </div>
+            <div class="password-div">
+                <!--                     <label form="Password">Password</label>-->
+                <i class="fa fa-lock"></i>
+                <input class="password" type="password" placeholder="Confirm Password" name="confirmPassword"
+                       id="confirm password" required>
+            </div>
+            <div class="submit">
+                <input class="submit-button" type="submit" value="Sign Up">
+            </div>
+            <div>
+                {% for msg in messages %}
+                <p class="text-warning">{{ msg }}</p>
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+
+    <div class="right">
+        <img class="r-image" src="static/login.jpg" alt="login-page Image">
+
+    </div>
+</div>
+
+<script>
+</script>
+</body>
+</html>

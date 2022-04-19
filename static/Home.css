@@ -1,0 +1,20 @@
+
+*{
+    margin:0;
+}
+.navbar-nav a{
+    color:white;
+}
+.contact{
+   color:white;
+}
+#section-jumbotron{
+    position:static;
+    margin:auto;
+    text-align: center;
+
+}
+.jumbotron{
+
+    align-items:center;
+}
